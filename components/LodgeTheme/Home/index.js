@@ -4,11 +4,11 @@ function Home() {
     return (
         <section className='homeBg bg-[url("/home1.jpg")] lg:bg-[url("/home6.jpg")]  md:h-screen lg:h-screen bg-cover bg-no-repeat md:flex lg:flex-none'>
 
-            <div className='py-10 px-10 md:my-auto'>
-                <div className='mb-5'>
-                    <div className='md:pb-36 md:w-11/12'>
+            <div className='py-10 px-7 md:px-10 md:my-auto'>
+                <div className='mb-5 md:pb-36'>
+                    <div className='md:w-11/12'>
                         <h1 className='uppercase text-white text-5xl md:text-7xl font-light'>
-                            a world of  luxury awaits introducing the lodge hotel
+                            a world of luxury awaits introducing the lodge hotel
                         </h1>
                     </div>
                 </div>
