@@ -42,6 +42,7 @@ function Home() {
                  
                 `}
             </style>
+            
         </section>
     )
 }
