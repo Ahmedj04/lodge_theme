@@ -1,60 +1,62 @@
 import React from 'react'
 import Carousel from 'better-react-carousel';
+import StarRatings from 'react-star-ratings';
 
 
-function Review({data}) {
+
+function Review({ data }) {
     return (
-        <section className='bg-[url("/home1.jpg")] bg-cover bg-no-repeat '>
-            <div className='py-10 px-5 text-white'>
+        <section className='bg-[url("/review6.jpg")] lg:bg-[url("/review7.jpg")] lg:h-screen bg-cover bg-no-repeat '>
+            <div className='py-10 px-5 lg:py-36 lg:px-24 text-white'>
                 <div>
                     <div className='mb-5'>
                         <div className='text-center'>
-                            <h6 className=''>TESTIMONIALS</h6>
+                            <h6 className='lg:text-lg'>TESTIMONIALS</h6>
                         </div>
                     </div>
 
-                    <div>
+                    <div className='lg:pt-10'>
 
-                        <Carousel cols={1} rows={1} gap={10} autoPlay={1000} loop={true}
+                        <Carousel cols={1} rows={1} gap={10} autoPlay={5000} loop={false}
                             responsiveLayout={[
                                 {
                                     breakpoint: 480,
-                                    cols: 2,
+                                    cols: 1,
                                     rows: 1,
                                     gap: 10,
-                                    loop: true,
+                                    loop: false,
                                     autoplay: 1000
                                 },
                                 {
                                     breakpoint: 810,
-                                    cols: 2,
+                                    cols: 1,
                                     rows: 1,
                                     gap: 20,
-                                    loop: true,
+                                    loop: false,
                                     autoplay: 1000
                                 },
                                 {
                                     breakpoint: 1020,
-                                    cols: 2,
+                                    cols: 1,
                                     rows: 1,
                                     gap: 10,
-                                    loop: true,
+                                    loop: false,
                                     autoplay: 1000
                                 },
                                 {
                                     breakpoint: 1024,
-                                    cols: 2,
+                                    cols: 1,
                                     rows: 1,
                                     gap: 10,
-                                    loop: true,
+                                    loop: false,
                                     autoplay: 1000
                                 },
                                 {
                                     breakpoint: 1280,
-                                    cols:2,
+                                    cols: 1,
                                     rows: 1,
                                     gap: 10,
-                                    loop: true,
+                                    loop: false,
                                     autoplay: 1000
                                 },
                             ]}
@@ -63,9 +65,21 @@ function Review({data}) {
                                 return (
                                     <Carousel.Item key={index} >
 
-                                        <p className={`text-center  tracking-wide`}>{resource?.review_content}</p>
+                                        <div className='text-center mb-5 lg:mb-14'>
+                                            <StarRatings
+                                                rating={resource.review_rating}
+                                                starRatedColor="#FDCC0D"
+                                                starDimension='20px'
+                                                numberOfStars={5}
+                                                starSpacing='1px'
+                                                name='rating'
+                                            />
+                                        </div>
 
-                                        <p className={`text-center  tracking-wide py-10`}>{resource?.review_author}</p>
+
+                                        <p className={`text-center text-xl  tracking-wide md:px-24 md:text-2xl lg:text-4xl font-light`}>{resource?.review_content}</p>
+
+                                        <p className={`text-center  tracking-wide pt-10`}>{resource?.review_author}</p>
 
 
                                     </Carousel.Item>

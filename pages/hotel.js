@@ -5,6 +5,7 @@ import Home from '@/components/LodgeTheme/Home'
 import About from '@/components/LodgeTheme/About'
 import Rooms from '@/components/LodgeTheme/Rooms';
 import Review from '@/components/LodgeTheme/Review';
+import Footer from '@/components/LodgeTheme/Footer';
 
 function Hotel() {
 
@@ -61,6 +62,9 @@ function Hotel() {
       <Review
         data={allHotelDetails?.Reviews}
 
+      />
+      <Footer 
+        allHotelDetails={allHotelDetails}
       />
 
 
