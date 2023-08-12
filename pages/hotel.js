@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import axios, { all } from 'axios';
 import Header from '../components/LodgeTheme/Header'
 import Home from '@/components/LodgeTheme/Home'
 import About from '@/components/LodgeTheme/About'
 import Rooms from '@/components/LodgeTheme/Rooms';
 import Review from '@/components/LodgeTheme/Review';
 import Footer from '@/components/LodgeTheme/Footer';
+import Services from '@/components/LodgeTheme/Services';
+import Photos from '@/components/LodgeTheme/Photos';
 
 function Hotel() {
 
   const [allHotelDetails, setHotelDetails] = useState([]);
   const [rooms, setRooms] = useState([]);
-
-
 
   useEffect(() => {
     getHotelDetails();
@@ -54,16 +54,34 @@ function Hotel() {
       <Header
         allHotelDetails={allHotelDetails}
       />
-      <Home />
-      <About />
+
+      <Home
+        allHotelDetails={allHotelDetails}
+      />
+
+      <About
+        allHotelDetails={allHotelDetails}
+      />
+
+      <Photos
+        allHotelDetails={allHotelDetails}
+      />
+
+<Services
+        allHotelDetails={allHotelDetails}
+      />
+      
       <Rooms
         rooms={rooms}
       />
+
+     
+
       <Review
         data={allHotelDetails?.Reviews}
-
       />
-      <Footer 
+
+      <Footer
         allHotelDetails={allHotelDetails}
       />
 

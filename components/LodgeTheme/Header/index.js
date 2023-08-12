@@ -7,7 +7,7 @@ import { SlCalender } from "react-icons/sl";
 
 function Header({ allHotelDetails }) {
   return (
-    <section className='border-b-2'>
+    <section className='border-b-2 bg-custom-brown'>
       <div className='md:flex md:justify-center'>
 
         <div className='px-3 py-2 md:w-7/12 lg:w-8/12 flex justify-between md:flex-row-reverse'>
@@ -26,10 +26,10 @@ function Header({ allHotelDetails }) {
           {/* only for large screen  */}
           <div className='hidden lg:block my-auto lg:px-10 lg:w-6/12'>
             <ul className='flex text-lg'>
-              <li><a className='pr-5 cursor-pointer hover:underline'>Home</a></li>
-              <li><a className='pr-5 cursor-pointer hover:underline'>Rooms</a></li>
-              <li><a className='pr-5 cursor-pointer hover:underline'>Gallery</a></li>
-              <li><a className='pr-5 cursor-pointer hover:underline'>Services</a></li>
+              <li><a href='#home' className='pr-5 cursor-pointer hover:underline'>Home</a></li>
+              <li><a href='#rooms' className='pr-5 cursor-pointer hover:underline'>Rooms</a></li>
+              <li><a href='#photos' className='pr-5 cursor-pointer hover:underline'>Gallery</a></li>
+              <li><a href='#services' className='pr-5 cursor-pointer hover:underline'>Services</a></li>
             </ul>
           </div>
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
-function About() {
+function About({allHotelDetails}) {
     return (
-        <section className='text-center'>
+        <section className='text-center bg-custom-brown'>
             <div className='py-10 px-5 md:px-32 lg:px-60'>
                 <div>
                     <div className='mb-5'>
@@ -11,8 +11,9 @@ function About() {
                         </div>
                     </div>
                     <div className='mb-5 lg:mb-10'>
-                        <p className='text-slate-500 text-xl md:text-2xl lg:text-3xl'>
-                            Whether you choose a spacious oceanfront suite or a cozy garden view room, our attentive staff is dedicated to ensuring your utmost comfort and satisfaction.
+                        <p className='text-slate-600 font-light text-xl md:text-2xl lg:text-3xl'>
+                        {allHotelDetails?.description_body}
+                            {/* Whether you choose a spacious oceanfront suite or a cozy garden view room, our attentive staff is dedicated to ensuring your utmost comfort and satisfaction. */}
                         </p>
                     </div>
                     

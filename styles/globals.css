@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+.bg-custom-brown{
+  background-color: #EAE7E3;
+
+}
