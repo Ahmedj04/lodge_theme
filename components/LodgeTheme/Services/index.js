@@ -3,28 +3,30 @@ import icon from '../../GlobalData';
 
 
 function Services({allHotelDetails}) {
+
     let i =0;
+
   return (
     <section id='services' className='bg-[url("/services1.jpg")] text-white'>
         <div className='py-10 px-5'>
             <div>
                 <div className='mb-5'>
                     <div>
-                        <h2 className='text-center text-4xl font-light'>UNPARALLELED AMENITIES</h2>
+                        <h2 className='text-center text-4xl lg:text-6xl font-light'>UNPARALLELED AMENITIES</h2>
                     </div>
                 </div>
 
-                <div className=" py-10 grid grid-flow-row-dense grid-cols-5 lg:grid-cols-5 md:grid-cols-4 md:col-span-9  grid-cols-2  md:gap-3 gap-1 lg:gap-3">
+                <div className=" pt-10 lg:pt-16 grid grid-flow-row-dense grid-cols-5 lg:grid-cols-5 md:grid-cols-4 md:col-span-9  grid-cols-2  md:gap-3 gap-1 lg:gap-3">
                         {
                             allHotelDetails?.services?.map((item, idx) => {
                                 return (
-                                    <React.Fragment key={idx}>
+                                    <div key={idx} className='py-5 md:py-2 lg:py-5'>
                                         {(() => {
                                             switch (item?.service_id) {
                                                 case 'ser001': return (
                                                     <div>
                                                         {/*AC*/}
-                                                        <span className="tooltip rounded-full hover:cursor-pointer hover:text-gray-200 flex justify-center" title={item?.local_service_name}>
+                                                        <span className=" tooltip rounded-full hover:cursor-pointer hover:text-gray-200 flex justify-center" title={item?.local_service_name}>
                                                             {icon?.Icons?.[i]?.ac}
                                                         </span>
                                                     </div>)
@@ -181,7 +183,7 @@ function Services({allHotelDetails}) {
                                                 default: return (<div></div>)
                                             }
                                         })()}
-                                    </React.Fragment>
+                                    </div>
                                 )
                             })
                         }

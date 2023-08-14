@@ -17,14 +17,17 @@ function About({allHotelDetails}) {
                         </p>
                     </div>
                     
-                    <div>
+
+                    {/* send message commented for now and saved for future use */}
+                    {/* <div>
                         <div className='flex justify-center'>
                             <div className='border border-black rounded-full py-2'>
                                 <span className='uppercase px-8 font-medium'>send message</span>
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
+                    
                 </div>
             </div>
 
