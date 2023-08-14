@@ -4,9 +4,6 @@ import { CiMail } from "react-icons/ci";
 import { SlCalender } from "react-icons/sl";
 import ContactUsModal from '../Modals/ContactUsModal';
 
-
-
-
 function Header({ allHotelDetails }) {
 
   const [showModalContactUs, setShowModalContactUs] = useState(0);

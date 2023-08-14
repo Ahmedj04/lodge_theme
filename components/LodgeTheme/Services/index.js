@@ -4,7 +4,7 @@ import icon from '../../GlobalData';
 
 function Services({allHotelDetails}) {
 
-    let i =0;
+  let i =0;
 
   return (
     <section id='services' className='bg-[url("/services1.jpg")] text-white'>
