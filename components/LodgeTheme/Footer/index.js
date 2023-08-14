@@ -1,13 +1,18 @@
-import React from 'react'
-import { BsFacebook,BsDot} from "react-icons/bs";
-import { AiOutlineTwitter} from "react-icons/ai";
+import React,{useState} from 'react'
+import Modal from '../Modals/Modal';
+import { BsFacebook, BsDot } from "react-icons/bs";
+import { AiOutlineTwitter } from "react-icons/ai";
 
 
 
 function Footer({ allHotelDetails }) {
+
+    const [showModalTC, setShowModalTC] = useState(0);
+    const [showModalPrivacy, setShowModalPrivacy] = useState(0);
+
     let date = new Date();
     return (
-        <section className='bg-black'>
+        <footer className='bg-black'>
             <div className='py-12 px-5 lg:px-24 text-white'>
                 <div>
 
@@ -21,9 +26,22 @@ function Footer({ allHotelDetails }) {
 
                     <div className='py-6'>
                         <div className='md:flex md:justify-evenly'>
-                            <div className='text-center flex justify-center md:justify-center md:w-4/12'>
-                                <span className=''><BsFacebook size={17} /></span>
-                                <span className='ml-3'><AiOutlineTwitter size={20} /></span>
+
+                            {/* policies and social media */}
+                            <div className='md:w-4/12'>
+                                <div className="hidden md:block md:flex md:justify-center">
+                                    <div>
+                                        <ul className='text-start'>
+                                            <li className='py-2 text-sm  cursor-pointer hover:underline' onClick={() => setShowModalTC(1)}>Terms & Conditions</li>
+                                            <li className='py-2 text-sm  cursor-pointer hover:underline' onClick={() => setShowModalPrivacy(1)}>Privacy Policy</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className='md:pt-10 text-center flex justify-center'>
+                                    <span className=''><BsFacebook size={17} /></span>
+                                    <span className='ml-3'><AiOutlineTwitter size={20} /></span>
+                                </div>
+
                             </div>
 
                             {/* hotel address */}
@@ -36,45 +54,78 @@ function Footer({ allHotelDetails }) {
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            {/* policies for sm devices */}
+                            <div className="md:hidden flex justify-center pb-5">
+                                    <div>
+                                        <ul className='text-center'>
+                                            <li className='py-2 text-sm  cursor-pointer' onClick={() => setShowModalTC(1)}>Terms & Conditions</li>
+                                            <li className='py-2 text-sm  cursor-pointer' onClick={() => setShowModalPrivacy(1)}>Privacy Policy</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
                             {/* hotel contacts */}
-                            <div className='md:w-4/12'>
-                                {allHotelDetails?.contacts?.map((contact, index) => {
-                                    return (
-                                        <div key={index} className=' pb-5 text-center text-sm md:text-start lg:text-base'>
-                                            <ul>
-                                                <li>
-                                                    <span className='text-slate-300'><em>{contact?.contact_type}:-</em></span>
-                                                    <span> {contact?.contact_data}</span>
+                            <div className='md:w-4/12 md:flex md:justify-center'>
+                                <div>
+                                    {allHotelDetails?.contacts?.map((contact, index) => {
+                                        return (
+                                            <div key={index} className=' pb-5 text-center text-sm md:text-start lg:text-base '>
+                                                <ul>
+                                                    <li>
+                                                        <span className='text-slate-300'><em>{contact?.contact_type}:-</em></span>
+                                                        <span> {contact?.contact_data}</span>
 
-                                                </li>
+                                                    </li>
 
-                                            </ul>
-                                        </div>);
-                                })}
+                                                </ul>
+                                            </div>);
+                                    })}
+                                </div>
                             </div>
 
+                            
                         </div>
                     </div>
 
                     <div className='mb-5'>
                         <div>
-                            <ul className='flex justify-center'>
-                                <li className='flex'><a>Rooms</a><span className='my-auto mx-2'><BsDot size={25}/></span></li>
-                                <li className='flex'><a>Services</a><span className='my-auto mx-2'><BsDot size={25}/></span></li>
-                                <li><a>About</a></li>              
+                            <ul className='flex justify-center text-sm lg:text-base'>
+                                <li className='flex'><a href='#rooms' className='hover:underline'>Rooms</a><span className='my-auto mx-2'><BsDot size={25} /></span></li>
+                                <li className='flex'><a href='#services' className='hover:underline'>Services</a><span className='my-auto mx-2'><BsDot size={25} /></span></li>
+                                <li className='flex'><a href='#photos' className='hover:underline'>Photos</a><span className='my-auto mx-2'><BsDot size={25} /></span></li>
+                                <li><a href='#about' className='hover:underline'>About</a></li>
                             </ul>
                         </div>
-                        
+
                     </div>
 
                     <div className='text-center md:text-center lg:text-center pt-10 border-t-2'>
-                    <p className='text-xs'>Copyright &copy; {date.getFullYear()} All Rights Reserved</p>
-                </div>
+                        <p className='text-xs'>Copyright &copy; {date.getFullYear()} All Rights Reserved</p>
+                    </div>
                 </div>
 
             </div>
-        </section>
+            
+             {/* ------------------- modal view for footer-------------------------- */}
+
+             <div className={showModalTC === 1 ? "block" : "hidden"}>
+                <Modal
+                    title={`Terms & Conditions`}
+                    description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
+                    setShowModal={(e) => setShowModalTC(e)}
+                />
+            </div>
+
+            <div className={showModalPrivacy === 1 ? "block" : "hidden"}>
+                <Modal
+                    title={`Privacy Policy`}
+                    description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
+                    setShowModal={(e) => setShowModalPrivacy(e)}
+                />
+            </div>
+
+        </footer>
     )
 }
 

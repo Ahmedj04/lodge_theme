@@ -6,7 +6,7 @@ import StarRatings from 'react-star-ratings';
 
 function Review({ data }) {
     return (
-        <section className='bg-[url("/review6.jpg")] lg:bg-[url("/review7.jpg")]  bg-cover bg-no-repeat '>
+        <section className='bg-[url("/review7.jpg")]   bg-cover bg-no-repeat '>
             <div className='py-10 px-5 lg:py-24 lg:px-24 text-white'>
                 <div>
                     <div className='mb-5'>

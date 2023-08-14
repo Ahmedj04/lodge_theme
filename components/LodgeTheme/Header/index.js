@@ -1,11 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { IoIosMenu } from "react-icons/io";
 import { CiMail } from "react-icons/ci";
 import { SlCalender } from "react-icons/sl";
+import ContactUsModal from '../Modals/ContactUsModal';
+
 
 
 
 function Header({ allHotelDetails }) {
+
+  const [showModalContactUs, setShowModalContactUs] = useState(0);
+
+
   return (
     <section className='border-b-2 bg-custom-brown'>
       <div className='md:flex md:justify-center'>
@@ -36,9 +42,9 @@ function Header({ allHotelDetails }) {
         </div>
 
         <div className='hidden md:block md:flex md:justify-end md:my-auto md:w-5/12 lg:w-4/12'>
-          <div className='flex'>
+          <div className='flex hover:cursor-pointer hover:underline'>
             <span className='my-auto'><CiMail /></span>
-            <span className='ml-2'> Contact</span>
+            <span className='ml-2' onClick={()=>{setShowModalContactUs(1)}}> Contact</span>
           </div>
 
           <div className='flex ml-5 md:mr-10'>
@@ -49,6 +55,13 @@ function Header({ allHotelDetails }) {
         </div>
 
       </div>
+
+       {/* modal for contact us*/}
+       <div className={showModalContactUs === 1 ? "block" : "hidden"}>
+                <ContactUsModal
+                    setShowModalContactUs={setShowModalContactUs}
+                />
+            </div>
 
     </section>
   )

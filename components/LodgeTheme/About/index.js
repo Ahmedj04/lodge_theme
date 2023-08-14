@@ -2,7 +2,7 @@ import React from 'react'
 
 function About({allHotelDetails}) {
     return (
-        <section className='text-center bg-custom-brown'>
+        <section id='about' className='text-center bg-custom-brown'>
             <div className='py-10 px-5 md:px-32 lg:px-60'>
                 <div>
                     <div className='mb-5'>

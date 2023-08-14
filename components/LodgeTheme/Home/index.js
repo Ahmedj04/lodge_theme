@@ -1,6 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
+import BookingForm from '@/components/Utils/BookingForm'
+import Modal from '../Modals/Modal';
 
 function Home({allHotelDetails}) {
+
+    const [showModalBooking, setShowModalBooking] = useState(0);
+
     return (
         <section id='home' className='homeBg bg-[url("/home1.jpg")] lg:bg-[url("/home6.jpg")]  md:h-screen lg:h-screen bg-cover bg-no-repeat md:flex lg:flex-none'>
 
@@ -21,8 +26,8 @@ function Home({allHotelDetails}) {
                     <div className='md:w-6/12'>
                         <div className='mt-5'>
                             <div className='flex justify-end'>
-                                <div className='border rounded-full py-3'>
-                                    <a> <span className=' px-10 uppercase text-white font-bold'>book now</span> </a>
+                                <div className='border rounded-full py-3 hover:bg-custom-hover-brown hover:cursor-pointer text-white hover:text-black'>
+                                    <a onClick={()=>setShowModalBooking(1)}> <span className=' px-10 uppercase  font-bold'>book now</span> </a>
                                 </div>
                             </div>
                         </div>
@@ -30,6 +35,14 @@ function Home({allHotelDetails}) {
                 </div>
 
             </div>
+
+             {/* ---------------booking form for small and medium screen--------------- */}
+             {showModalBooking === 1 ?
+                <Modal
+                    description={<BookingForm />}
+                    setShowModal={(e) => setShowModalBooking(e)}
+                />
+                : <></>}
 
 
             <style jsx>
