@@ -16,6 +16,10 @@ function Hotel() {
   const [allHotelDetails, setHotelDetails] = useState([]);
   const [rooms, setRooms] = useState([]);
 
+  // loaders
+  const [hotelDetailLoader, setHotelDetailLoader] = useState(0);
+  const [roomDetailLoader, setRoomDetailLoader] = useState(0);
+
   const [menu, setMenu] = useState(0)
 
 
@@ -60,6 +64,8 @@ function Hotel() {
         allHotelDetails={allHotelDetails}
         menu={menu}
         setMenu={setMenu}
+        hotelDetailLoader={hotelDetailLoader}
+
       />
 
       <Home
@@ -68,22 +74,32 @@ function Hotel() {
 
       <About
         allHotelDetails={allHotelDetails}
+        hotelDetailLoader={hotelDetailLoader}
+
       />
 
       <Photos
         allHotelDetails={allHotelDetails}
+        hotelDetailLoader={hotelDetailLoader}
+
       />
 
       <Services
         allHotelDetails={allHotelDetails}
+        hotelDetailLoader={hotelDetailLoader}
+
       />
 
       <Rooms
         rooms={rooms}
+        roomDetailLoader={roomDetailLoader}
+
       />
 
       <Review
         data={allHotelDetails?.Reviews}
+        hotelDetailLoader={hotelDetailLoader}
+
       />
 
       <Footer

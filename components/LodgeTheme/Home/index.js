@@ -12,7 +12,7 @@ function Home({allHotelDetails}) {
             <div className='py-10 px-7 md:px-10 md:my-auto'>
                 <div className='mb-5 md:pb-36'>
                     <div className='md:w-11/12'>
-                        <h1 className='uppercase text-white text-5xl md:text-8xl lg:text-8xl font-light'>
+                        <h1 className='animate-slide-in uppercase text-white text-5xl md:text-8xl lg:text-8xl font-light'>
                             a world of luxury awaits introducing the {allHotelDetails?.property_name}
                         </h1>
                     </div>
@@ -20,7 +20,7 @@ function Home({allHotelDetails}) {
 
                 <div className='md:flex'>
                     <div className='md:w-6/12'> 
-                        <p className='text-white md:text-lg font-medium text-slate-100'>Immerse yourself in the breathtaking beauty of our coastal paradise, where the rhythmic sounds of the ocean waves provide a soothing backdrop to your stay.</p>
+                        <p className='animate-slide-in text-white md:text-lg font-medium text-slate-100'>Immerse yourself in the breathtaking beauty of our coastal paradise, where the rhythmic sounds of the ocean waves provide a soothing backdrop to your stay.</p>
                     </div>
 
                     <div className='md:w-6/12'>
