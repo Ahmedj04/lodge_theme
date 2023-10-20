@@ -5,7 +5,7 @@ import { SlCalender } from "react-icons/sl";
 import ContactUsModal from '../Modals/ContactUsModal';
 import Loader from '../Loaders/Loader';
 
-function Header({ allHotelDetails, hotelDetailLoader, menu, setMenu }) {
+function Header({ allHotelDetails, hotelDetailLoader, setMenu }) {
 
   const [showModalContactUs, setShowModalContactUs] = useState(0);
 
